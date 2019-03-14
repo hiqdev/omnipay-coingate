@@ -1,10 +1,17 @@
 {
     "name": "hiqdev/omnipay-coingate",
-    "type": "project",
-    "description": "Omnipay Coingate",
+    "type": "library",
+    "description": "CoinGate driver for the Omnipay payment processing library",
     "keywords": [
         "omnipay",
-        "coingate"
+        "coingate",
+        "gateway",
+        "bitcoin",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "purchase"
     ],
     "homepage": "https://github.com/hiqdev/omnipay-coingate",
     "license": "BSD-3-Clause",
@@ -16,6 +23,10 @@
         "forum": "http://forum.hiqdev.com/"
     },
     "authors": [
+        {
+            "name": "CoinGate",
+            "email": "support@coingate.com"
+        },
         {
             "name": "Andrii Vasyliev",
             "role": "Project lead",
@@ -41,9 +52,16 @@
             "homepage": "http://hiqdev.com/"
         }
     ],
+    "autoload": {
+        "psr-4": { "Omnipay\\CoinGate\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "~2.0"
+    },
     "require-dev": {
         "hiqdev/hidev-php": "dev-master",
-        "hiqdev/hidev-hiqdev": "dev-master"
+        "hiqdev/hidev-hiqdev": "dev-master",
+        "omnipay/tests": "~2.0"
     },
     "minimum-stability": "dev",
     "repositories": [
