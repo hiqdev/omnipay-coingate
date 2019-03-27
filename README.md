@@ -21,7 +21,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "coingate/omnipay-coingate": "dev-master"
+        "hiqdev/omnipay-coingate": "dev-master"
     }
 }
 ```
