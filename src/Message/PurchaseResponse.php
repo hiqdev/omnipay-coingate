@@ -72,4 +72,15 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
             return $this->data['reason'].': '.$this->data['message'];
         }
     }
+
+    /**
+     * {@inheritdoc}
+     * @return string
+     */
+    public function getTransactionReference()
+    {
+        if (isset($this->data['id'])) {
+            return (string) $this->data['id'];
+        }
+    }
 }

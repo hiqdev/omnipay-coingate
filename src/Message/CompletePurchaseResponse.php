@@ -56,17 +56,6 @@ class CompletePurchaseResponse extends PurchaseResponse
      * {@inheritdoc}
      * @return string
      */
-    public function getTransactionReference()
-    {
-        if (isset($this->data['id'])) {
-            return (string) $this->data['id'];
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     * @return string
-     */
     public function getAmount()
     {
         return $this->data['price_amount'] ?? null;
