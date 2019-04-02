@@ -38,7 +38,7 @@ class CompletePurchaseResponse extends PurchaseResponse
      * Get order status
      * @return string
      */
-    public function getOrderStatus()
+    public function getTransactionStatus()
     {
         return $this->data['status'];
     }
@@ -49,6 +49,47 @@ class CompletePurchaseResponse extends PurchaseResponse
      */
     public function isPaid()
     {
-        return $this->getOrderStatus() === 'paid';
+        return $this->getTransactionStatus() === 'paid';
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return string
+     */
+    public function getAmount()
+    {
+        return $this->data['price_amount'] ?? null;
+    }
+
+    /**
+     * Get payment time.
+     *
+     * @return string
+     */
+    public function getTime()
+    {
+        $time = new \DateTime($this->data['created_at'], new \DateTimeZone('UTC'));
+
+        return $time->format('c');
+    }
+
+    /**
+     * Get payment currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->data['price_currency'];
+    }
+
+    /**
+     * Get payer info - name, username and id.
+     *
+     * @return string
+     */
+    public function getPayer()
+    {
+        return $this->data['order_id'];
     }
 }

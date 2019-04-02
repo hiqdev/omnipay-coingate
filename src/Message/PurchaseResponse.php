@@ -74,12 +74,13 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
     }
 
     /**
+     * {@inheritdoc}
      * @return string
      */
     public function getTransactionReference()
     {
         if (isset($this->data['id'])) {
-            return $this->data['id'];
+            return (string) $this->data['id'];
         }
     }
 }
