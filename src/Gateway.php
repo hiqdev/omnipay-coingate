@@ -86,7 +86,7 @@ class Gateway extends AbstractGateway
      * @param array $parameters
      * @return CompletePurchaseRequest|\Omnipay\Common\Message\AbstractRequest
      */
-    public function getPurchaseStatus(array $parameters = [])
+    public function completePurchase(array $parameters = [])
     {
         return $this->createRequest(CompletePurchaseRequest::class, $parameters);
     }
