@@ -23,7 +23,7 @@ class CompletePurchaseResponse extends PurchaseResponse
      */
     public function isSuccessful()
     {
-        return !$this->getMessage();
+        return !$this->getMessage() && $this->isPaid();
     }
 
     /**
